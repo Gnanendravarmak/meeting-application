@@ -1,0 +1,147 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.signup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.signup-form {
+    flex: 1;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.signup-title {
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333333;
+}
+
+.login-link {
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.input-label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms-label-single-line {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555555;
+    cursor: pointer;
+}
+
+.terms-checkbox {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
+
+.signup-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.signup-image {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    background-color: #333333;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+/* Error message styling */
+.signup-error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.title-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .signup-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .signup-form {
+        width: 50%;
+    }
+
+    .signup-image {
+        width: 50%;
+        margin-top: 0;
+    }
+}

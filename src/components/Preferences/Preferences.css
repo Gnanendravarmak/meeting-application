@@ -1,0 +1,126 @@
+/* General container styling */
+.preferences-container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Image on the Right */
+.preference-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 500px;
+    object-fit: cover;
+}
+
+/* Content in the Middle */
+.preferences-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 100px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    z-index: 1;
+}
+
+/* Title styling */
+.preferences-content h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.preferences-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.preferences-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Category selection container */
+.preferences-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Category button styling */
+.preferences-button {
+    flex: 1 1 calc(50% - 10px);
+    padding: 10px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.preferences-button:hover {
+    background-color: #007bff;
+}
+
+.preferences-button.selected {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+/* Continue button styling */
+.preferences-continue-button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.preferences-continue-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .preferences-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .preferences-input {
+        max-width: 100%;
+    }
+
+    .preferences-categories {
+        gap: 8px;
+    }
+
+    .preferences-button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}

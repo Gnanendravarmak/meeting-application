@@ -1,0 +1,166 @@
+/* General container styling */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.login-content {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  height: 80vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Form styling */
+.login-form {
+  flex: 0 0 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.title-login-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 2rem;
+  color: #333333;
+  margin: 0;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555555;
+  font-size: 1rem;
+}
+
+.password-toggle-btn:hover {
+  color: #007bff;
+}
+
+.login-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.account-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.account-text {
+  font-size: 0.9rem;
+  color: #555555;
+  margin: 0;
+}
+
+.login-link {
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Image styling */
+.login-image {
+  flex: 0 0 40%;
+  /* Take up 40% of the width */
+  height: 100%;
+  /* Full height of the container */
+  object-fit: cover;
+  /* Ensure the image covers the area without distortion */
+}
+
+/* Loader and ToastMessage styling */
+.loader,
+.toast-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.toast-message {
+  top: 20px;
+  /* Position toast at the top */
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toast-message button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 10px;
+}
