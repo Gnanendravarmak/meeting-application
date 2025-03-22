@@ -6,20 +6,30 @@ import testimonial1 from "../../assets/sign.webp"; // Replace with your actual t
 import testimonial2 from "../../assets/sign.webp";
 import testimonial3 from "../../assets/sign.webp";
 import testimonial4 from "../../assets/sign.webp";
+import { Link, useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="landing-page">
       <nav className="navbar">
         <div className="logo">CNNCT</div>
-        <button className="signup-btn">Sign up free</button>
+        <button
+          className="langing-signup-btn"
+          onClick={() => navigate("/signup")}
+        >
+          Sign up free
+        </button>
       </nav>
       <section className="hero">
         <div className="hero-content">
           <h1>
-            CNNCT – Easy <span>Scheduling Ahead</span>
+            CNNCT – Easy <br />
+            <span>Scheduling Ahead</span>
           </h1>
-          <button className="hero-btn">Sign up free</button>
+          <button className="hero-btn" onClick={() => navigate("/signup")}>
+            Sign up free
+          </button>
         </div>
         <div className="hero-image-container">
           <img src={heroImage} alt="Hero" className="hero-image" />
@@ -90,7 +100,7 @@ const LandingPage = () => {
       </section>
       {/* Integrations Section */}
       <section className="integrations">
-        <h2>All Link Apps and Integrations</h2>
+        <div className="integrations-title">All Link Apps and Integrations</div>
         <div className="integration-grid">
           {[
             {
@@ -125,31 +135,36 @@ const LandingPage = () => {
             },
           ].map((item, index) => (
             <div className="integration-item" key={index}>
-              <img
-                src={`https://via.placeholder.com/50x50?text=${item.name}`}
-                alt={item.name}
-                className="integration-icon"
-              />
-              <p>{item.description}</p>
+              <img src={heroImage} alt="loader" className="integration-icon" />
+              <div className="integration-content">
+                <p>{item.name}</p>
+                <p>{item.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
       {/* Footer Section */}
       <footer className="footer">
-        <div className="footer-links">
-          <a href="#">About CNNCT</a>
-          <a href="#">Blog</a>
-          <a href="#">Privacy</a>
-          <a href="#">Social Good</a>
-          <a href="#">Contact</a>
-          <a href="#">Terms and Conditions</a>
-          <a href="#">Press</a>
-          <a href="#">Cookie Notice</a>
-          <a href="#">FAQs</a>
-          <a href="#">Trust Center</a>
-          <a href="#">Report a Violation</a>
+        <div className="footer-cta">
+          <button className="footer-signup-btn">Sign up free</button>
+          <button className="footer-login-btn">Login up free</button>
         </div>
+        <div className="footer-links">
+          <Link to="#">About CNNCT</Link>
+          <Link to="#">Blog</Link>
+          <Link to="#">Privacy</Link>
+          <Link to="#">Social Good</Link>
+          <Link to="#">Contact</Link>
+          <Link to="#">Terms and Conditions</Link>
+          <Link to="#">Press</Link>
+          <Link to="#">Cookie Notice</Link>
+          <Link to="#">FAQs</Link>
+          <Link to="#">Trust Center</Link>
+          <Link to="#">Report a Violation</Link>
+        </div>
+      </footer>
+      <div className="footer-legal">
         <div className="footer-disclaimer">
           We acknowledge the Traditional Custodians of the land on which our
           office stands, The Wurundjeri people of the Kulin Nation, and pay our
@@ -158,17 +173,17 @@ const LandingPage = () => {
         <div className="footer-social">
           {["Twitter", "Instagram", "YouTube", "LinkedIn", "Facebook"].map(
             (platform, index) => (
-              <a href="#" key={index}>
+              <Link to="#" key={index}>
                 <img
                   src={`https://via.placeholder.com/30x30?text=${platform}`}
                   alt={platform}
                   className="social-icon"
                 />
-              </a>
+              </Link>
             )
           )}
         </div>
-      </footer>
+      </div>
     </div>
   );
 };

@@ -3,10 +3,12 @@ import './Preferences.css';
 import signupImage from "../../assets/sign.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faGraduationCap, faDollarSign, faBuilding, faUsers, faBriefcase, faLaptopCode, faBullhorn } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';
 
 const Preferences: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const navigate = useNavigate();
 
   const categories = [
     { name: 'Sales', icon: faChartBar },
@@ -51,7 +53,7 @@ const Preferences: React.FC = () => {
             </button>
           ))}
         </div>
-        <button className="preferences-continue-button" disabled={!username || !selectedCategory}>
+        <button className="preferences-continue-button" onClick={() => navigate('/event-creation')}>
           Continue
         </button>
       </div>

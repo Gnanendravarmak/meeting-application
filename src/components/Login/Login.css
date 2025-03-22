@@ -6,28 +6,31 @@
   min-height: 100vh;
   background-color: #f5f5f5;
   position: relative;
+  width: 100%;
 }
 
+/* Main content area - takes full width and height */
 .login-content {
   display: flex;
-  width: 80%;
-  max-width: 1200px;
-  height: 80vh;
+  width: 100%;
+  height: 100vh;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
 }
 
-/* Form styling */
+/* Form styling - takes 50% width */
 .login-form {
-  flex: 0 0 60%;
+  flex: 0 0 50%;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
+  height: 100%;
 }
 
+/* Title container */
 .title-login-container {
   text-align: center;
   margin-bottom: 20px;
@@ -39,9 +42,10 @@
   margin: 0;
 }
 
+/* Input field styling */
 .login-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #cccccc;
   border-radius: 8px;
@@ -54,6 +58,7 @@
   outline: none;
 }
 
+/* Password field with toggle button */
 .password-container {
   position: relative;
   width: 100%;
@@ -62,7 +67,7 @@
 .password-toggle-btn {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 15px;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -75,6 +80,7 @@
   color: #007bff;
 }
 
+/* Login button */
 .login-btn-container {
   text-align: center;
   margin-top: 20px;
@@ -82,7 +88,7 @@
 
 .login-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -101,6 +107,7 @@
   cursor: not-allowed;
 }
 
+/* Account login container */
 .account-login-container {
   display: flex;
   flex-direction: column;
@@ -126,14 +133,11 @@
   text-decoration: underline;
 }
 
-/* Image styling */
+/* Image section - takes 50% width and full height */
 .login-image {
-  flex: 0 0 40%;
-  /* Take up 40% of the width */
+  flex: 0 0 50%;
   height: 100%;
-  /* Full height of the container */
   object-fit: cover;
-  /* Ensure the image covers the area without distortion */
 }
 
 /* Loader and ToastMessage styling */
@@ -148,7 +152,6 @@
 
 .toast-message {
   top: 20px;
-  /* Position toast at the top */
   transform: translateX(-50%);
   background-color: #ff4d4d;
   color: #ffffff;
@@ -163,4 +166,24 @@
   color: #ffffff;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .login-form,
+  .login-image {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .login-image {
+    order: -1;
+    /* Moves image above the form */
+  }
 }

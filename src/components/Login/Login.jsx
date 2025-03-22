@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { login } from "../../api";
 import signupImage from "../../assets/sign.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../Loader/Loader"; // Import Loader component
@@ -14,6 +14,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ const Login = () => {
     login(email, password) // Pass email and password to login function
       .then(() => {
         setLoading(false);
+        navigate("/preferences");
         // Handle successful login (e.g., redirect to dashboard)
       })
       .catch((err) => {

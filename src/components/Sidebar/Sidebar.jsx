@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarAlt,
@@ -13,9 +13,13 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+  const [showLogout, setShowLogout] = useState(false);
 
-  const handleSettings = () => {
-    navigate("/settings");
+  const handleSettings = () => navigate("/settings");
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
   };
 
   return (
@@ -40,9 +44,24 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      <div className="user-profile">
-        <img src="https://via.placeholder.com/40" alt="User Profile" />
-        <span>{user?.username || "User"}</span>
+
+      {/* User Profile with Logout Dropdown */}
+      <div className="user-profile" onClick={() => setShowLogout(!showLogout)}>
+        {user?.profileImage ? (
+          <img src={user.profileImage} alt="User" className="profile-img" />
+        ) : (
+          <div className="profile-circle">
+            {user?.username ? user.username.charAt(0).toUpperCase() : "U"}
+          </div>
+        )}
+        <span className="username">{user?.username || "User"}</span>
+
+        {/* Sign Out Dropdown */}
+        {showLogout && (
+          <div className="logout-menu">
+            <button onClick={handleLogout}>Sign Out</button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -46,9 +46,6 @@ const EventCreation = () => {
           <button className="create-event-button" onClick={handleCreateEvent}>
             + Create Event
           </button>
-          <button className="settings-button" onClick={handleSettings}>
-            Settings
-          </button>
         </div>
         <div className="events-list">
           {eventTypes.map((eventType) => (
