@@ -6,6 +6,36 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2c3e50;
+  z-index: 1000;
+}
+
+.main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100px;
+    padding: 10px;
+  }
+  .main-content {
+    margin-left: 100px;
+  }
 }
 
 .menu {
@@ -26,15 +56,6 @@
   transition: background-color 0.3s;
 }
 
-/* .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #007bff;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-} */
-
 .menu ul {
   list-style: none;
   padding: 0;
@@ -48,19 +69,22 @@
   margin-bottom: 18px;
   padding: 10px 15px;
   font-size: 1rem;
-  color: #333232;
+  color: #ecf0f1;
   border-radius: 8px;
   cursor: pointer;
 }
 
-.menu li:hover {
-  background-color: #ffffff;
-  color: #ffffff;
+@media (max-width: 480px) {
+  .menu li {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
 }
 
 .menu li svg {
   transition: color 0.3s ease;
 }
+
 .menu li svg:hover {
   color: #dbdfe3 !important;
   transition: color 0.3s ease;
@@ -69,7 +93,6 @@
 .user-profile {
   margin-top: auto;
   display: flex;
-  background: red;
   align-items: center;
   position: relative;
   cursor: pointer;
@@ -82,11 +105,25 @@
   transition: background-color 0.3s ease;
 }
 
+@media (max-width: 480px) {
+  .user-profile {
+    padding: 5px 10px;
+    width: 100%;
+  }
+}
+
 .profile-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .profile-img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .profile-circle {
@@ -103,10 +140,24 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 480px) {
+  .profile-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
 .username {
   font-size: 16px;
   color: white;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .username {
+    font-size: 14px;
+  }
 }
 
 .logout-menu {

@@ -5,11 +5,12 @@
 }
 
 /* Sidebar Styling */
-.booking-container .sidebar {
+.booking-container {
     width: 250px;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 250px;
 }
 
 /* Main Content Area */

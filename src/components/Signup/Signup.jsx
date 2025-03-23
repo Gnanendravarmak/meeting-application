@@ -4,7 +4,7 @@ import { signup } from "../../api";
 import signupImage from "../../assets/Frame 1.svg";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader"; // Import Loader component
-import ToastMessage from "../ToastMessage/ToastMessage"; // Import ToastMessage component
+import Popup from "../Popup/Popup"; // Import Popup component
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,6 +14,7 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(""); // Add success state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +24,8 @@ const Signup = () => {
     }
     setLoading(true);
     try {
-      await signup(firstName, lastName, email, password);
+      const response = await signup(firstName, lastName, email, password);
+      setSuccess(response.message); // Set success message from backend
     } catch (err) {
       setError(err.message);
     } finally {
@@ -34,8 +36,8 @@ const Signup = () => {
   return (
     <div className="signup-container">
       {loading && <Loader />} {/* Display Loader when loading */}
-      {error && <ToastMessage message={error} />}{" "}
-      {/* Display ToastMessage when error */}
+      {error && <Popup message={error} />} {/* Display Popup when error */}
+      {success && <Popup message={success} />} {/* Display Popup when success */}
       <div className="signup-content">
         {/* Form on the Left */}
         <form className="signup-form" onSubmit={handleSubmit}>

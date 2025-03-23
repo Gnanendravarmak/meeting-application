@@ -3,7 +3,6 @@ import { deleteEvent, getEvents } from "../../api";
 import { useNavigate } from "react-router-dom";
 import "./EventCreation.css";
 import Sidebar from "../Sidebar/Sidebar"; // Importing Sidebar
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,7 +26,8 @@ const EventCreation = () => {
 
   const handleDeleteEvent = async (eventId) => {
     await deleteEvent(eventId);
-    setEventTypes(eventTypes.filter((event) => event.id !== eventId));
+    const events = await getEvents();
+    setEventTypes(events);
   };
 
   const handleSettings = () => {
