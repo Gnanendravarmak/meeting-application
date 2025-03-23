@@ -1,19 +1,24 @@
 import React from "react";
 import "./LandingPage.css";
-import heroImage from "../../assets/sign.webp"; // Replace with your actual hero image path
+import heroImage from "../../assets/screen 1.svg";
+// import heroImage from "../../assets/sign.webp"; // Replace with your actual hero image path
 import calendarImage from "../../assets/sign.webp"; // Replace with your actual calendar image path
 import testimonial1 from "../../assets/sign.webp"; // Replace with your actual testimonial images
 import testimonial2 from "../../assets/sign.webp";
 import testimonial3 from "../../assets/sign.webp";
 import testimonial4 from "../../assets/sign.webp";
 import { Link, useNavigate } from "react-router-dom";
+import CNNCT from "../../assets/Frame 1171274812.svg";
 
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <div className="landing-page">
       <nav className="navbar">
-        <div className="logo">CNNCT</div>
+        <div className="logo">
+          {/* {CNNCT} */}
+          <img src={CNNCT} alt="CNNCT Logo" />
+        </div>
         <button
           className="langing-signup-btn"
           onClick={() => navigate("/signup")}

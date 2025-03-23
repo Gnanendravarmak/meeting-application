@@ -126,7 +126,7 @@ const Signup = () => {
 
           <div className="signup-btn-container">
             <button type="submit" className="signup-button" disabled={loading}>
-              {loading ? "Loading..." : "Create Account"}
+              {loading ? "Loading..." : "Create an Account"}
             </button>
           </div>
         </form>

@@ -1,7 +1,7 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  color: #ecf0f1;
+  color: #ecf0f110;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,14 +26,50 @@
   transition: background-color 0.3s;
 }
 
-.menu li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+/* .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+} */
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* User Profile */
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #333232;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.menu li svg {
+  transition: color 0.3s ease;
+}
+.menu li svg:hover {
+  color: #dbdfe3 !important;
+  transition: color 0.3s ease;
+}
+
 .user-profile {
   margin-top: auto;
   display: flex;
+  background: red;
   align-items: center;
   position: relative;
   cursor: pointer;
@@ -46,11 +82,6 @@
   transition: background-color 0.3s ease;
 }
 
-.user-profile:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Profile Image */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -58,7 +89,6 @@
   object-fit: cover;
 }
 
-/* Profile Circle (Fallback for No Image) */
 .profile-circle {
   width: 40px;
   height: 40px;
@@ -73,20 +103,17 @@
   text-transform: uppercase;
 }
 
-/* Username */
 .username {
   font-size: 16px;
   color: white;
   font-weight: bold;
 }
 
-/* Sign Out Dropdown */
 .logout-menu {
   position: absolute;
-  bottom: -50px;
+  top: -50px;
   right: 0;
   background: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 8px 12px;
   min-width: 120px;

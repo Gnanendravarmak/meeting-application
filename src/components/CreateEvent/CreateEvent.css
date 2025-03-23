@@ -40,11 +40,6 @@
   flex-wrap: nowrap;
 }
 
-label {
-  font-weight: 600;
-  color: #444;
-}
-
 .input-field {
   width: 100%;
   padding: 10px;

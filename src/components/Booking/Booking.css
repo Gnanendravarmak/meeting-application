@@ -1,0 +1,63 @@
+/* General Container */
+.booking-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.booking-container .sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Area */
+.booking-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.booking-content h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Booking Options */
+.booking-options {
+    display: flex;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    /* Light background for better contrast */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.booking-option {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+    text-align: center;
+}
+
+.total-people {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.people-count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    /* Blue highlight */
+}

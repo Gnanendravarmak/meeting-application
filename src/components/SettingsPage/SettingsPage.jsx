@@ -30,11 +30,14 @@ const SettingsPage = () => {
     <div className="settings-page">
       <Sidebar />
       <div className="settings-content">
-        <h1 className="settings-title">Settings</h1>
+        <div className="settings-title">
+          <p>Profile</p>
+          <p>Manage settings for your profile</p>
+        </div>
 
-        {/* Edit Profile Section */}
         <div className="edit-profile-section">
-          <h2 className="section-title">Edit Profile</h2>
+          <div className="section-title">Edit Profile</div>
+          <div className="border-bottom"></div>
           <form onSubmit={handleSubmit} className="edit-profile-form">
             <div className="form-group">
               <label className="form-label">First Name</label>
@@ -102,7 +105,7 @@ const SettingsPage = () => {
             </div>
 
             <button type="submit" className="update-btn">
-              Update Profile
+              Save
             </button>
           </form>
         </div>

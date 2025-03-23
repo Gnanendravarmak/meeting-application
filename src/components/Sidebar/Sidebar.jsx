@@ -27,13 +27,13 @@ const Sidebar = () => {
       <div className="logo">CNNCT</div>
       <nav className="menu">
         <ul>
-          <li>
+          <li onClick={() => navigate("/event-creation")}>
             <FontAwesomeIcon icon={faCalendarAlt} /> Events
           </li>
-          <li>
+          <li onClick={() => navigate("/booking")}>
             <FontAwesomeIcon icon={faUserCircle} /> Booking
           </li>
-          <li>
+          <li onClick={() => navigate("/availability")}>
             <FontAwesomeIcon icon={faClock} /> Availability
           </li>
           <li onClick={handleSettings}>

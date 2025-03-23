@@ -9,6 +9,7 @@ import PublicEventPage from "./components/PublicEventPage/PublicEventPage"; // N
 import "./App.css";
 import Preferences from "./components/Preferences/Preferences";
 import CreateEvent from "./components/CreateEvent/CreateEvent";
+import Booking from "./components/Booking/Booking";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/landingpage" element={<LandingPage />} />
         <Route path="/preferences" element={<Preferences />} />
         <Route path="/create-event" element={<CreateEvent />} />
+        <Route path="/availability" element={<AvailabilitySettings />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
     </BrowserRouter>
   );
