@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../Loader/Loader"; // Import Loader component
-import ToastMessage from "../ToastMessage/ToastMessage"; // Import ToastMessage component
+import Popup from "../Popup/Popup"; // Import Popup component
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -37,8 +37,8 @@ const Login = () => {
       {/* Loader */}
       {loading && <Loader />}
 
-      {/* Error Toast Message */}
-      {error && <ToastMessage message={error} onClose={() => setError("")} />}
+      {/* Error Popup */}
+      {error && <Popup message={error} onClose={() => setError("")} />}
 
       <div className="login-content">
         {/* Form on the Left */}

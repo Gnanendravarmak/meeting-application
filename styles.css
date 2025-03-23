@@ -1,0 +1,70 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* ...existing code... */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* ...existing code... */
+}
+
+.header, .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    /* ...existing code... */
+}
+
+.main-content {
+    padding: 2em 0;
+    /* ...existing code... */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+    .header, .footer {
+        padding: 0.5em 0;
+    }
+    .main-content {
+        padding: 1em 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .header, .footer {
+        padding: 0.5em 0;
+    }
+    .main-content {
+        padding: 1em 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .header, .footer {
+        padding: 0.5em 0;
+        font-size: 0.9em;
+    }
+    .main-content {
+        padding: 0.5em 0;
+    }
+}

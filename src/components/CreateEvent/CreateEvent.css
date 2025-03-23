@@ -1,12 +1,14 @@
 .create-event-page {
   display: flex;
   height: 100vh;
+  overflow: hidden; /* Prevent overlapping */
 }
 
 .create-event-content {
   flex: 1;
   padding: 40px;
   background-color: #f9f9f9;
+  margin-left: 250px; /* Adjust based on sidebar width */
 }
 
 .create-event-title {
@@ -20,7 +22,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 450px;
   margin: 0 auto;
   background: #fff;
   padding: 20px;
@@ -99,9 +100,31 @@
 
   .create-event-content {
     padding: 20px;
+    margin-left: 0; /* Adjust for smaller screens */
   }
 
   .create-event-form {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-event-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .create-event-content {
+    padding: 10px;
+  }
+
+  .create-event-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
   }
 }

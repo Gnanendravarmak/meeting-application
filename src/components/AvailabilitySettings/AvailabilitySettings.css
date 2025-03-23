@@ -1,12 +1,15 @@
 .availability-container {
     display: flex;
     height: 100vh;
+    position: relative; /* Add this line */
 }
 
 .availability-content {
     flex: 1;
     padding: 20px;
     background-color: #f9f9f9;
+    margin-left: 250px; /* Adjust this value based on the width of the sidebar */
+    overflow-y: auto; /* Add this line */
 }
 
 .calendar-wrapper {
@@ -58,6 +61,11 @@
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Add this line */
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 300px; /* Adjust as needed */
+    z-index: 1000; /* Add this line */
 }
 
 .event-form h3 {

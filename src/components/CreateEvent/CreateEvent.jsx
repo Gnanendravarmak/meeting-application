@@ -18,6 +18,9 @@ const CreateEvent = () => {
     timezone: "UTC+5",
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -38,9 +41,13 @@ const CreateEvent = () => {
       timezone: formData.timezone,
     };
     try {
-      await createEvent(dataToSend);
+      const response = await createEvent(dataToSend);
+      setSuccessMessage(response?.data || "Event created successfully!");
+      setErrorMessage("");
       navigate("/event-creation");
     } catch (error) {
+      setErrorMessage(error.response?.data || "Error creating event: " + error.message);
+      setSuccessMessage("");
       console.error("Error creating event: ", error);
     }
   };
@@ -54,6 +61,8 @@ const CreateEvent = () => {
       <Sidebar />
       <div className="create-event-content">
         <h2 className="create-event-title">Create New Event</h2>
+        {successMessage && <p className="success-message">{successMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         <form className="create-event-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Event Title</label>
