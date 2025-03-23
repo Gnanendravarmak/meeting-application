@@ -1,17 +1,42 @@
 import React from "react";
 import "./LandingPage.css";
 import heroImage from "../../assets/screen 1.svg";
+import calendarImage from "../../assets/Fantastical 1.svg";
+import calendarImages from "../../assets/screen 3.svg";
 // import heroImage from "../../assets/sign.webp"; // Replace with your actual hero image path
-import calendarImage from "../../assets/sign.webp"; // Replace with your actual calendar image path
+// import calendarImage from "../../assets/sign.webp"; // Replace with your actual calendar image path
 import testimonial1 from "../../assets/sign.webp"; // Replace with your actual testimonial images
 import testimonial2 from "../../assets/sign.webp";
 import testimonial3 from "../../assets/sign.webp";
 import testimonial4 from "../../assets/sign.webp";
 import { Link, useNavigate } from "react-router-dom";
 import CNNCT from "../../assets/Frame 1171274812.svg";
+import image1 from "../../assets/Auto Layout Horizontal 1.svg";
+import image2 from "../../assets/Auto Layout Horizontal 2.svg";
+import image3 from "../../assets/Auto Layout Horizontal 3.svg";
+import image4 from "../../assets/Auto Layout Horizontal 4.svg";
+import image5 from "../../assets/Auto Layout Horizontal 5.svg";
+import image6 from "../../assets/Auto Layout Horizontal 6.svg";
+import image7 from "../../assets/Auto Layout Horizontal 7.svg";
+import image8 from "../../assets/Auto Layout Horizontal 8.svg";
+import image9 from "../../assets/Auto Layout Horizontal 9.svg";
+
+import { FaTwitter, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import { PiDiceSixBold } from "react-icons/pi";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const integrationImages = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+  ];
   return (
     <div className="landing-page">
       <nav className="navbar">
@@ -28,7 +53,7 @@ const LandingPage = () => {
       </nav>
       <section className="hero">
         <div className="hero-content">
-          <h1>
+          <h1 className="hero-title-content">
             CNNCT – Easy <br />
             <span>Scheduling Ahead</span>
           </h1>
@@ -65,7 +90,19 @@ const LandingPage = () => {
             </li>
           </ul>
         </div>
-        <img src={calendarImage} alt="Calendar" className="calendar-image" />
+        {/* <img src={calendarImage} alt="Calendar" className="calendar-image" /> */}
+        <div className="calendar-images">
+          <img
+            src={calendarImage}
+            alt="Calendar 1"
+            className="calendar-image first"
+          />
+          <img
+            src={calendarImages}
+            alt="Calendar 2"
+            className="calendar-image second"
+          />
+        </div>
       </section>
       {/* Testimonials Section */}
       <section className="testimonials">
@@ -140,7 +177,12 @@ const LandingPage = () => {
             },
           ].map((item, index) => (
             <div className="integration-item" key={index}>
-              <img src={heroImage} alt="loader" className="integration-icon" />
+              {/* <img src={heroImage} alt="loader" className="integration-icon" /> */}
+              <img
+                src={integrationImages[index]} // Use the corresponding image from the integrationImages array
+                alt={item.name} // Use the integration name as the alt text
+                className="integration-icon"
+              />
               <div className="integration-content">
                 <p>{item.name}</p>
                 <p>{item.description}</p>
@@ -149,46 +191,62 @@ const LandingPage = () => {
           ))}
         </div>
       </section>
-      {/* Footer Section */}
+
       <footer className="footer">
-        <div className="footer-cta">
-          <button className="footer-signup-btn">Sign up free</button>
-          <button className="footer-login-btn">Login up free</button>
+        <div className="footer-top">
+          <div className="footer-container">
+            <div className="footer-cta">
+              <button className="tooter-btn footer-login-btn">Log in</button>
+              <button className="tooter-btn footer-signup-btn">
+                Sign up free
+              </button>
+            </div>
+
+            {/* Right Side - Links Section */}
+            <div className="footer-right">
+              <div className="footer-links">
+                <div className="footer-column">
+                  <Link to="#">About CNNCT</Link>
+                  <Link to="#">Blog</Link>
+                  <Link to="#">Press</Link>
+                  <Link to="#">Social Good</Link>
+                  <Link to="#">Contact</Link>
+                </div>
+                <div className="footer-column">
+                  <Link to="#">Careers</Link>
+                  <Link to="#">Getting Started</Link>
+                  <Link to="#">Features and How-Tos</Link>
+                  <Link to="#">FAQs</Link>
+                  <Link to="#">Report a Violation</Link>
+                </div>
+                <div className="footer-column">
+                  <Link to="#">Terms and Conditions</Link>
+                  <Link to="#">Privacy Policy</Link>
+                  <Link to="#">Cookie Notice</Link>
+                  <Link to="#">Trust Center</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-legal">
+            <div className="footer-text">
+              We acknowledge the Traditional Custodians of the land on which our
+              office stands, The Wurundjeri people of the Kulin Nation, and pay
+              our respects to Elders past, present and emerging.
+            </div>
+            <div className="footer-social">
+              <FaTwitter className="social-icon" />
+              <FaInstagram className="social-icon" />
+              <FaYoutube className="social-icon" />
+              <FaTiktok className="social-icon" />
+              <PiDiceSixBold className="social-icon" />
+            </div>
+          </div>
         </div>
-        <div className="footer-links">
-          <Link to="#">About CNNCT</Link>
-          <Link to="#">Blog</Link>
-          <Link to="#">Privacy</Link>
-          <Link to="#">Social Good</Link>
-          <Link to="#">Contact</Link>
-          <Link to="#">Terms and Conditions</Link>
-          <Link to="#">Press</Link>
-          <Link to="#">Cookie Notice</Link>
-          <Link to="#">FAQs</Link>
-          <Link to="#">Trust Center</Link>
-          <Link to="#">Report a Violation</Link>
-        </div>
+
+        {/* Social Icons */}
       </footer>
-      <div className="footer-legal">
-        <div className="footer-disclaimer">
-          We acknowledge the Traditional Custodians of the land on which our
-          office stands, The Wurundjeri people of the Kulin Nation, and pay our
-          respects to Elders past, present and emerging.
-        </div>
-        <div className="footer-social">
-          {["Twitter", "Instagram", "YouTube", "LinkedIn", "Facebook"].map(
-            (platform, index) => (
-              <Link to="#" key={index}>
-                <img
-                  src={`https://via.placeholder.com/30x30?text=${platform}`}
-                  alt={platform}
-                  className="social-icon"
-                />
-              </Link>
-            )
-          )}
-        </div>
-      </div>
     </div>
   );
 };

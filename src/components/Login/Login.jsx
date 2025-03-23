@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { login } from "../../api";
-import signupImage from "../../assets/sign.webp";
+import signupImage from "../../assets/Frame 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";

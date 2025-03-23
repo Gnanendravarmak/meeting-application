@@ -1,10 +1,7 @@
-/* Landing Page Container */
 .landing-page {
     margin-top: 30px;
-    /* padding: 0 20px; */
 }
 
-/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -73,7 +70,6 @@
 .hero-content h1 span {
   display: block;
   font-size: 2rem;
-  color: #007bff; /* Adjust color as needed */
 }
 
 .hero-btn:hover {
@@ -121,14 +117,14 @@
     line-height: 1.5;
 }
 
-/* Calendar & Meetings Section Styling */
+
 .calendar-meetings {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-top: 40px;
     align-items: center;
-    padding: 2rem 20px; /* Adjust padding for calendar meetings section */
+    padding: 2rem 20px; 
     text-align: center;
 }
 
@@ -160,6 +156,132 @@
     max-width: 100%;
     height: auto;
     margin-top: 1rem;
+}
+.calendar-meetings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px 80px;
+}
+
+.calendar-section {
+    flex: 1;
+    max-width: 45%;
+}
+
+.calendar-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.calendar-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.calendar-section li {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding-left: 24px;
+    position: relative;
+    color: #333;
+}
+
+.calendar-section li::before {
+    content: "•";
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.calendar-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: -50px;
+    max-width: 50%;
+    position: relative;
+}
+
+.calendar-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.first {
+    transform: rotate(-5deg);
+}
+
+.second {
+    transform: rotate(5deg);
+}
+
+.calendar-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 50%;
+}
+
+.calendar-image {
+    width: 250px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+.first {
+    transform: rotate(-5deg);
+    z-index: 2;
+    left: 80px;
+}
+
+.second {
+    transform: rotate(5deg);
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .calendar-meetings {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .calendar-section,
+    .calendar-images {
+        max-width: 100%;
+    }
+
+    .calendar-images {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .calendar-image {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendar-image {
+        width: 60%;
+    }
+
+    .first,
+    .second {
+        transform: none;
+    }
 }
 
 .testimonials {
@@ -287,7 +409,8 @@
 
 .footer-cta {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
+    margin-bottom: 100px;  
 }
 
 .integration-grid {
@@ -321,20 +444,20 @@
     display: flex;
     flex-direction: column;
 }
-
+/* 
 .footer {
     margin-top: 40px;
     padding: 20px;
     padding: 2rem 20px;
     display: flex;
-    justify-content: space-between; /* Distribute space between child elements */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between; 
+    align-items: center;
     background-color: #f9f9f9;
 }
 
 .footer-cta {
     display: flex;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
 }
 
 .footer-signup-btn, .footer-login-btn {
@@ -385,7 +508,7 @@
     color: #6c757d;
     margin-top: 1rem;
     text-align: center;
-    width: 100%; /* Ensure disclaimer takes full width */
+    width: 100%; 
 }
 
 .footer-social {
@@ -421,4 +544,119 @@
     width: 30px;
     height: 30px;
 }
+ */
 
+
+
+
+ .footer {
+     background: #fff;
+     padding: 40px;
+     border-radius: 16px;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+     max-width: 80%;
+     margin: auto;
+ }
+
+
+ .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .footer-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .tooter-btn {
+    border: none;
+    background: #c1c4c8;
+ }
+
+ .footer-login-btn {
+    margin: 10px;
+    padding: 15px 25px;
+    color: #313232;
+    border-radius: 5px;
+ }
+
+ .footer-signup-btn {
+    margin: 10px;
+        padding: 15px 25px;
+        color: #f9ffff;
+        background: #007bff;
+        border-radius: 20px;
+ }
+
+ .footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-text {
+    max-width: 600px;
+    /* Adjust for text width */
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    /* Ensures text fits into two lines */
+    text-wrap: balance;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    /* Adjust width as needed */
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #151414;
+    /* Adjust as needed */
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #007bff;
+    /* Hover effect */
+}

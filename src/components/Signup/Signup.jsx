@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { signup } from "../../api";
-import signupImage from "../../assets/sign.webp";
+import signupImage from "../../assets/Frame 1.svg";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader"; // Import Loader component
 import ToastMessage from "../ToastMessage/ToastMessage"; // Import ToastMessage component
