@@ -96,3 +96,32 @@ export const deleteEvent = async (id) => {
     throw new Error('Event deletion failed: ' + error.response.data.message);
   }
 };
+
+export const getEventById = async (id) => {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await axios.get(`${BASE_URL}/events/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response?.data;
+  } catch (error) {
+    throw new Error('Failed to fetch event: ' + error.response.data.message);
+  }
+};
+
+export const disableEvent = async (id) => {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await axios.patch(`${BASE_URL}/events/disable/${id}`, {}, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response);
+    return response?.data;
+  } catch (error) {
+    throw new Error('Event disable failed: ' + error.response.data.message);
+  }
+}

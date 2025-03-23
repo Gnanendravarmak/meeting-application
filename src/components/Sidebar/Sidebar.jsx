@@ -7,39 +7,56 @@ import {
   faCog,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+  const location = useLocation();
   const [showLogout, setShowLogout] = useState(false);
-
-  const handleSettings = () => navigate("/settings");
 
   const handleLogout = () => {
     localStorage.clear();
     navigate("/login");
   };
 
+  // Function to check if the current link is active
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="sidebar">
       <div className="logo">CNNCT</div>
       <nav className="menu">
         <ul>
-          <li onClick={() => navigate("/event-creation")}>
+          <li
+            className={isActive("/event-creation") ? "active" : ""}
+            onClick={() => navigate("/event-creation")}
+          >
             <FontAwesomeIcon icon={faCalendarAlt} /> Events
           </li>
-          <li onClick={() => navigate("/booking")}>
+          <li
+            className={isActive("/booking") ? "active" : ""}
+            onClick={() => navigate("/booking")}
+          >
             <FontAwesomeIcon icon={faUserCircle} /> Booking
           </li>
-          <li onClick={() => navigate("/availability")}>
+          <li
+            className={isActive("/availability") ? "active" : ""}
+            onClick={() => navigate("/availability")}
+          >
             <FontAwesomeIcon icon={faClock} /> Availability
           </li>
-          <li onClick={handleSettings}>
+          <li
+            className={isActive("/settings") ? "active" : ""}
+            onClick={() => navigate("/settings")}
+          >
             <FontAwesomeIcon icon={faCog} /> Settings
           </li>
-          <li onClick={() => navigate("/create-event")}>
+          <li
+            className={isActive("/create-event") ? "active" : ""}
+            onClick={() => navigate("/create-event")}
+          >
             <FontAwesomeIcon icon={faPlus} /> Create
           </li>
         </ul>
@@ -56,7 +73,6 @@ const Sidebar = () => {
         )}
         <span className="username">{user?.username || "User"}</span>
 
-        {/* Sign Out Dropdown */}
         {showLogout && (
           <div className="logout-menu">
             <button onClick={handleLogout}>Sign Out</button>
